@@ -41,7 +41,6 @@ background-attachment:fixed;
 }
 
 
-
 /* MENU */
 
 .menu{
@@ -74,7 +73,6 @@ object-fit:contain;
 
 
 
-
 nav{
 
 display:flex;
@@ -100,7 +98,6 @@ font-weight:bold;
 }
 
 
-
 nav a:hover{
 
 color:#00eaff;
@@ -109,8 +106,7 @@ color:#00eaff;
 
 
 
-
-/* HORA */
+/* FECHA Y HORA */
 
 .hora{
 
@@ -125,8 +121,7 @@ font-weight:bold;
 
 
 
-
-/* BOTON SALIR */
+/* SALIR */
 
 .salir{
 
@@ -158,8 +153,6 @@ background:white;
 box-shadow:0 0 20px #00eaff;
 
 }
-
-
 
 
 
@@ -240,7 +233,6 @@ cursor:pointer;
 }
 
 
-
 .banner button:hover{
 
 background:white;
@@ -252,7 +244,6 @@ background:white;
 
 
 /* TITULO */
-
 
 .titulo{
 
@@ -290,7 +281,6 @@ margin:10px auto;
 
 
 /* PRODUCTOS */
-
 
 .productos{
 
@@ -337,7 +327,6 @@ transition:.3s;
 
 
 
-
 .auto:hover{
 
 transform:translateY(-8px);
@@ -345,7 +334,6 @@ transform:translateY(-8px);
 box-shadow:0 0 25px #00eaff;
 
 }
-
 
 
 
@@ -361,8 +349,6 @@ object-fit:contain;
 
 
 
-
-
 .auto h3{
 
 font-size:16px;
@@ -373,8 +359,6 @@ margin:8px;
 
 
 
-
-
 .auto p{
 
 color:#aaa;
@@ -382,8 +366,6 @@ color:#aaa;
 font-size:14px;
 
 }
-
-
 
 
 
@@ -398,8 +380,6 @@ font-weight:bold;
 margin:10px;
 
 }
-
-
 
 
 
@@ -429,10 +409,6 @@ box-shadow:0 0 15px #00eaff;
 
 }
 
-
-
-
-
 /* FOOTER */
 
 
@@ -455,7 +431,6 @@ color:#00eaff;
 font-size:18px;
 
 }
-
 
 
 
@@ -484,8 +459,8 @@ font-size:60px;
 
 }
 
-}
 
+}
 
 
 
@@ -500,11 +475,13 @@ display:none;
 }
 
 
+
 .productos{
 
 grid-template-columns:1fr;
 
 }
+
 
 
 .banner{
@@ -518,7 +495,6 @@ padding-left:25px;
 
 
 
-
 </style>
 
 
@@ -526,21 +502,14 @@ padding-left:25px;
 
 
 
-
-
 <body>
-
-
 
 
 
 <header class="menu">
 
 
-
 <img src="img/YONIX.png" class="logo">
-
-
 
 
 
@@ -558,11 +527,9 @@ padding-left:25px;
 
 
 
-
-
 <div class="hora" id="hora">
 
-00:00:00
+00/00/0000 | 00:00:00
 
 </div>
 
@@ -577,7 +544,6 @@ SALIR
 
 
 </header>
-
 
 
 
@@ -601,7 +567,6 @@ COLLECTION
 
 
 
-
 <p>
 
 Colecciona autos únicos y modelos especiales.
@@ -617,10 +582,7 @@ VER COLECCIÓN
 </button>
 
 
-
 </section>
-
-
 
 
 
@@ -632,7 +594,6 @@ VER COLECCIÓN
 PRODUCTOS DESTACADOS
 
 </h2>
-
 
 
 
@@ -665,7 +626,7 @@ PRODUCTOS DESTACADOS
 
 <div class="auto">
 <img src="img/AUTO3.png">
-<h3>Monsters, Inc.</h3>
+<h3>Monsters Inc.</h3>
 <p>Especial</p>
 <div class="precio">S/14.99</div>
 <button>🛒 Comprar</button>
@@ -675,7 +636,7 @@ PRODUCTOS DESTACADOS
 
 <div class="auto">
 <img src="img/AUTO4.png">
-<h3> El Extraño Mundo de Jack </h3>
+<h3>Jack Skellington</h3>
 <p>Colección</p>
 <div class="precio">S/14.99</div>
 <button>🛒 Comprar</button>
@@ -685,7 +646,7 @@ PRODUCTOS DESTACADOS
 
 <div class="auto">
 <img src="img/AUTO5.png">
-<h3>Los Increibles</h3>
+<h3>Los Increíbles</h3>
 <p>Limitado</p>
 <div class="precio">S/14.99</div>
 <button>🛒 Comprar</button>
@@ -765,37 +726,68 @@ PRODUCTOS DESTACADOS
 
 
 
-
 <script>
 
 
 function reloj(){
 
 
-let fecha=new Date();
+let fecha = new Date();
 
 
-document.getElementById("hora").innerHTML=
 
-fecha.getHours()+":"+
+let dia = fecha.getDate();
 
-fecha.getMinutes()+":"+
+let mes = fecha.getMonth()+1;
 
-fecha.getSeconds();
+let año = fecha.getFullYear();
+
+
+
+let horas = fecha.getHours();
+
+let minutos = fecha.getMinutes();
+
+let segundos = fecha.getSeconds();
+
+
+
+if(dia < 10) dia="0"+dia;
+
+if(mes < 10) mes="0"+mes;
+
+if(horas < 10) horas="0"+horas;
+
+if(minutos < 10) minutos="0"+minutos;
+
+if(segundos < 10) segundos="0"+segundos;
+
+
+
+
+document.getElementById("hora").innerHTML =
+
+
+dia+"/"+mes+"/"+año+
+
+" | "+
+
+horas+":"+minutos+":"+segundos;
+
 
 
 }
 
 
+
 setInterval(reloj,1000);
+
 
 reloj();
 
 
 
 </script>
-
-
 
 
 
