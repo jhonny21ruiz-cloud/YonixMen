@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YonixMen Store</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+
+body{
+
+font-family:'Segoe UI',Arial,sans-serif;
+
+color:white;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.95)
+),
+
+url("img/PORTADA.png");
+
+background-size:cover;
+
+background-attachment:fixed;
+
+}
+
+
+
+/* MENU */
+
+.menu{
+
+height:70px;
+
+background:#050b16;
+
+border-bottom:2px solid #00eaff;
+
+display:flex;
+
+align-items:center;
+
+padding:0 45px;
+
+}
+
+
+
+.logo{
+
+width:150px;
+
+height:60px;
+
+object-fit:contain;
+
+}
+
+
+
+
+nav{
+
+display:flex;
+
+gap:55px;
+
+margin:auto;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:17px;
+
+font-weight:bold;
+
+}
+
+
+
+nav a:hover{
+
+color:#00eaff;
+
+}
+
+
+
+
+/* HORA */
+
+.hora{
+
+color:#00eaff;
+
+font-size:18px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+/* BOTON SALIR */
+
+.salir{
+
+margin-left:25px;
+
+background:#00d9ff;
+
+color:black;
+
+padding:10px 22px;
+
+border-radius:10px;
+
+font-size:15px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+
+.salir:hover{
+
+background:white;
+
+box-shadow:0 0 20px #00eaff;
+
+}
+
+
+
+
+
+
+
+/* BANNER */
+
+
+.banner{
+
+height:230px;
+
+padding-left:60px;
+
+padding-top:25px;
+
+}
+
+
+
+
+.banner h1{
+
+font-size:70px;
+
+letter-spacing:5px;
+
+line-height:1;
+
+text-transform:uppercase;
+
+}
+
+
+
+.banner span{
+
+display:inline-block;
+
+font-size:85px;
+
+color:#00eaff;
+
+margin-left:15px;
+
+}
+
+
+
+
+.banner p{
+
+font-size:20px;
+
+margin-top:15px;
+
+}
+
+
+
+
+.banner button{
+
+margin-top:18px;
+
+padding:12px 35px;
+
+background:#00d9ff;
+
+border:none;
+
+border-radius:10px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.banner button:hover{
+
+background:white;
+
+}
+
+
+
+
+
+/* TITULO */
+
+
+.titulo{
+
+text-align:center;
+
+font-size:38px;
+
+letter-spacing:5px;
+
+margin:-5px 0 15px;
+
+}
+
+
+
+.titulo:after{
+
+content:"";
+
+display:block;
+
+height:3px;
+
+width:120px;
+
+background:#00eaff;
+
+margin:10px auto;
+
+}
+
+
+
+
+
+
+/* PRODUCTOS */
+
+
+.productos{
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:15px;
+
+padding:20px 40px;
+
+}
+
+
+
+
+
+.auto{
+
+background:
+
+linear-gradient(
+
+145deg,
+
+#07121f,
+
+#02060c
+
+);
+
+
+border:1px solid #00eaff;
+
+border-radius:18px;
+
+padding:12px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+
+
+
+.auto:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 0 25px #00eaff;
+
+}
+
+
+
+
+.auto img{
+
+width:100%;
+
+height:110px;
+
+object-fit:contain;
+
+}
+
+
+
+
+
+.auto h3{
+
+font-size:16px;
+
+margin:8px;
+
+}
+
+
+
+
+
+.auto p{
+
+color:#aaa;
+
+font-size:14px;
+
+}
+
+
+
+
+
+.precio{
+
+color:#00eaff;
+
+font-size:20px;
+
+font-weight:bold;
+
+margin:10px;
+
+}
+
+
+
+
+
+.auto button{
+
+background:#00d9ff;
+
+border:none;
+
+padding:10px 25px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+
+
+.auto button:hover{
+
+background:white;
+
+box-shadow:0 0 15px #00eaff;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+height:100px;
+
+background:#050b16;
+
+border-top:2px solid #00eaff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#00eaff;
+
+font-size:18px;
+
+}
+
+
+
+
+
+
+@media(max-width:1000px){
+
+
+.productos{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+
+.banner h1{
+
+font-size:50px;
+
+}
+
+
+.banner span{
+
+font-size:60px;
+
+}
+
+}
+
+
+
+
+
+@media(max-width:700px){
+
+
+nav{
+
+display:none;
+
+}
+
+
+.productos{
+
+grid-template-columns:1fr;
+
+}
+
+
+.banner{
+
+padding-left:25px;
+
+}
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+
+
+<header class="menu">
+
+
+
+<img src="img/YONIX.png" class="logo">
+
+
+
+
+
+<nav>
+
+<a href="#">INICIO</a>
+
+<a href="#">PRODUCTO</a>
+
+<a href="#">COLECCIÓN</a>
+
+<a href="#">CHALARD</a>
+
+</nav>
+
+
+
+
+
+<div class="hora" id="hora">
+
+00:00:00
+
+</div>
+
+
+
+<a href="index.html" class="salir">
+
+SALIR
+
+</a>
+
+
+
+</header>
+
+
+
+
+
+
+
+<section class="banner">
+
+
+<h1>
+
+HOT WHEELS
+
+<span>
+
+COLLECTION
+
+</span>
+
+</h1>
+
+
+
+
+<p>
+
+Colecciona autos únicos y modelos especiales.
+
+</p>
+
+
+
+<button>
+
+VER COLECCIÓN
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<h2 class="titulo">
+
+PRODUCTOS DESTACADOS
+
+</h2>
+
+
+
+
+
+
+
+<section class="productos">
+
+
+
+<div class="auto">
+<img src="img/AUTO1.png">
+<h3>Buzz Lightyear</h3>
+<p>Edición especial</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO2.png">
+<h3>Woody</h3>
+<p>Colección</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO3.png">
+<h3>Jessie</h3>
+<p>Especial</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO4.png">
+<h3>Alien</h3>
+<p>Colección</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO5.png">
+<h3>Personaje 5</h3>
+<p>Limitado</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO6.png">
+<h3>Buzz Especial</h3>
+<p>Colección</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO7.png">
+<h3>Woody Racing</h3>
+<p>Especial</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO8.png">
+<h3>Spider Car</h3>
+<p>Edición limitada</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO9.png">
+<h3>SpiderMan</h3>
+<p>Colección</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+<div class="auto">
+<img src="img/AUTO10.png">
+<h3>Stitch</h3>
+<p>Especial</p>
+<div class="precio">S/14.99</div>
+<button>🛒 Comprar</button>
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+🚚 ENVÍOS SEGUROS &nbsp;&nbsp;
+⭐ COLECCIONISTAS &nbsp;&nbsp;
+🔒 COMPRA SEGURA
+
+</footer>
+
+
+
+
+
+
+
+
+<script>
+
+
+function reloj(){
+
+
+let fecha=new Date();
+
+
+document.getElementById("hora").innerHTML=
+
+fecha.getHours()+":"+
+
+fecha.getMinutes()+":"+
+
+fecha.getSeconds();
+
+
+}
+
+
+setInterval(reloj,1000);
+
+reloj();
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
